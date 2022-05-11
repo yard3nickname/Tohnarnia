@@ -1,19 +1,19 @@
-from .piece import Piece
-from .location import Location
+from src.piece import Piece
+from src.location import Location
 
 
 class PieceLocationMapping:
     def __init__(self):
-        self.mapping = dict()
+        self._mapping = dict()
 
     def add_piece_mapping(self, piece: Piece, loc: Location):
-        self.mapping[piece] = loc
+        self._mapping[piece] = loc
 
     def remove_piece_mapping(self, piece: Piece):
-        del self.mapping[piece]
+        del self._mapping[piece]
 
     def get_piece_location(self, piece) -> Location:
-        return self.mapping[piece]
+        return self._mapping[piece]
 
     def get_pieces_by_location(self, loc) -> list[Piece]:
-        return [k for k, v in self.mapping if v == loc]
+        return [k for k, v in self._mapping if v == loc]

@@ -1,4 +1,4 @@
-from .spawn_strategy.i_spawn_strategy import ISpawnStrategy
+from src.spawn_strategy import ISpawnStrategy
 
 
 class Piece:

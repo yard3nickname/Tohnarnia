@@ -1,8 +1,8 @@
-from .i_spawn_strategy import ISpawnStrategy
+from src.spawn_strategy import ISpawnStrategy
 
-from ..location import Location
-from ..mapa import Mapa
-from ..piece_location_mapping import PieceLocationMapping
+from src.location import Location
+from src.mapa import Mapa
+from src.piece_location_mapping import PieceLocationMapping
 
 from random import choice
 
@@ -12,7 +12,7 @@ class RandomSpawn(ISpawnStrategy):
         self._mapa = mapa
         self._piece_loc_mapping = piece_loc_mapping
 
-    def get_spawning_loc(self) -> Location:
+    def get_spawning_location(self) -> Location:
         # more work should be done here! good only for first level
-        filter_function = lambda loc: loc in [Location(0, 0)]
-        return choice(filter(filter_function, self._mapa.get_locations()))
+        filter_function = lambda loc: loc not in [Location(0, 0)]
+        return choice(list(filter(filter_function, self._mapa.get_locations())))

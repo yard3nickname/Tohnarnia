@@ -1,12 +1,12 @@
-from .mapa import Mapa
-
+from src.mapa import Mapa
+from src.location import Location
 
 class Navigator:
     def __init__(self, mapa: Mapa):
         self._mapa = mapa
         # user choice generator in game not to add to here
 
-    def navigate(self, piece, something_about_user_choice):
+    def navigate(self, piece, something_about_user_choice) -> list[Location]:
 
 
     # hitlabtut - lo zarich lihiot kan

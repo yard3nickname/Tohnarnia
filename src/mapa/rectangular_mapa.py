@@ -1,6 +1,5 @@
-from .mapa import Mapa
-
-from ..location import Location
+from src.mapa import Mapa
+from src.location import Location
 
 
 class RectangularMapa(Mapa):
@@ -9,7 +8,7 @@ class RectangularMapa(Mapa):
         self._columns = columns
 
     def get_locations(self) -> list[Location]:
-        return [Location(row, column) for row in self._rows for column in self._columns]
+        return [Location(row, column) for row in range(self._rows) for column in range(self._columns)]
 
     def get_valid_location(self, loc: Location) -> Location:
         return Location(loc._row % self._rows, loc._column % self._columns)

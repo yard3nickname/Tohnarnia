@@ -8,4 +8,4 @@ class Spawner:
         self.piece_loc_mapping = piece_loc_mapping
 
     def spawn(self, piece: Piece):
-        self.piece_loc_mapping[piece] = piece._spawn_strategy.get_spawning_location()
+        self.piece_loc_mapping.add_piece_mapping(piece, piece._spawn_strategy.get_spawning_location())
