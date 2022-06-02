@@ -1,6 +1,6 @@
-from src.spawn_strategy import ISpawnStrategy
+from src.move_strategy import IMoveStrategy
 
 
 class Piece:
-    def __init__(self, spawn_strategy: ISpawnStrategy):
-        self._spawn_strategy = spawn_strategy
+    def __init__(self, move_strategy: IMoveStrategy):
+        self._move_strategy = move_strategy

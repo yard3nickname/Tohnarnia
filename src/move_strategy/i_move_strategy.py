@@ -1,3 +1,3 @@
 class IMoveStrategy:
-    def move(self):
+    def get_optional_moves(self):
         pass
